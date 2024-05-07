@@ -16,8 +16,8 @@ pipeline {
                     name: 'What to do ???'
                 )]
                 if(response=='Yes'){
-                    bat 'mvn --version'
                     bat 'git --version'
+                    bat 'cd C:/maven-3.9.6/bin && mvn --version'
                     bat 'cd C:/Gradle/gradle-8.7/bin && gradle -version'
                 }
             }
