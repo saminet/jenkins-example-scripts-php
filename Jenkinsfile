@@ -1,11 +1,13 @@
 pipeline {
   agent any
   stages {
+    
     stage('verify version') {
       steps {
         powershell 'php --version'
       }
     }
+    
     stage('Software versions') {
         steps {
             script {
@@ -23,15 +25,18 @@ pipeline {
             }
         }
     }
+    
     stage('hello') {
       steps {
         powershell 'php hello.php'
       }
     }
+    
     stage('hello 2') {
       steps {
-        powershell 'php hello.php'
+        build job: 'static-code-analysis'
       }
     }
+    
   }
 }
