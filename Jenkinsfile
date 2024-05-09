@@ -34,7 +34,7 @@ pipeline {
     
     stage('hello 2') {
       steps {
-        build job: 'static-code-analysis'
+        build job: 'MVN-Test pipeline'
       }
     }
     
