@@ -32,7 +32,7 @@ pipeline {
       }
     }
     
-    stage('hello 2') {
+    stage('MVN-Test pipeline') {
       steps {
         build job: 'MVN-Test pipeline'
       }
