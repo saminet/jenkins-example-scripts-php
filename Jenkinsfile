@@ -17,11 +17,10 @@ pipeline {
                 )]
                 if(response=='Yes'){
                     bat 'git --version'
-                    bat 'cd C:/maven-3.9.6/bin && mvn --version'
-                    bat 'cd C:/Gradle/gradle-8.7/bin && gradle -version'
+                    bat 'mvn --version'
+                    bat 'gradle -version'
                 }
             }
-
         }
     }
     stage('hello') {
@@ -29,5 +28,8 @@ pipeline {
         powershell 'php hello.php'
       }
     }
+    stage('Call another job'){
+       build job: 'Test Gradle'
+   }
   }
 }
