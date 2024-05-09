@@ -28,8 +28,10 @@ pipeline {
         powershell 'php hello.php'
       }
     }
-    stage('Call another job'){
-       build job: 'Test Gradle'
-   }
+    stage('hello 2') {
+      steps {
+        powershell 'php hello.php'
+      }
+    }
   }
 }
